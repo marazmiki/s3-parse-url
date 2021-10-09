@@ -1,0 +1,9 @@
+.tox
+.pytest_cache
+.coverage
+dist
+htmlcov
+.idea
+*.pyc
+.python-version
+docs/_build
