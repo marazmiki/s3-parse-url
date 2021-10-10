@@ -1,0 +1,13 @@
+[run]
+branch = True
+relative_files = true
+omit =
+    .tox/
+    dist/
+    docs/
+
+
+[report]
+exclude_lines =
+    raise NotImplementedError
+    if __name__ == .__main__.:

@@ -2,6 +2,9 @@
 s3-parse-url
 ############
 
+.. image:: https://coveralls.io/repos/github/marazmiki/s3-parse-url/badge.svg?branch=master
+ :target: https://coveralls.io/github/marazmiki/s3-parse-url?branch=master
+
 Parses S3 credentials from the given string and returns it in comfortable
 format to pass to popular clients like boto3.
 
