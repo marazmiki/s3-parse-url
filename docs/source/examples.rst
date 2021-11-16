@@ -1,6 +1,16 @@
 Examples
 ========
 
+Warning!
+
+You should use quote if your password contains special characters
+Example:
+
+.. code::
+
+    echo "pass\/\/ord" | python -c "import sys; from urllib.parse import quote_plus; print(quote_plus(sys.stdin.read().strip()))"
+    pass%5C%2F%5C%2Ford
+
 .. code::
 
     import typing

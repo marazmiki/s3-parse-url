@@ -1,9 +1,11 @@
 .tox
 .pytest_cache
-.coverage
+.coverage*
 dist
 htmlcov
 .idea
 *.pyc
 .python-version
 docs/_build
+.vscode
+docs/source/_build/
