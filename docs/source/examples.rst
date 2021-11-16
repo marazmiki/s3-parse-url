@@ -3,7 +3,9 @@ Examples
 
 Warning!
 
-You should use quote if your password contains special characters
+If your password contains special chars like %or /, you should quote it manually 
+to %25 and %25 respectively. Feel free to use this handy snippet to get a safe 
+(i.e. quoted) password.
 Example:
 
 .. code::
