@@ -1,3 +1,4 @@
+from typing import Optional
 from s3_parse_url.base import S3DataSource
 
 
@@ -26,7 +27,7 @@ class AmazonS3(S3DataSource):
             return False
         return super()._is_host_given()
 
-    def _parse_bucket_name(self) -> str:
+    def _parse_bucket_name(self) -> Optional[str]:
         _parent = super()._parse_bucket_name()
         if self._is_amazon_host():
             return self._strip_amazon_prefix()

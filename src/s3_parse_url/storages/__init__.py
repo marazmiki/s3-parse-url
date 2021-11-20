@@ -5,7 +5,7 @@ from s3_parse_url.storages.minio import Minio
 from s3_parse_url.storages.selectel import SelectelStorage
 from s3_parse_url.storages.yandex import YandexCloud
 
-SUPPORTED_STORAGES = {}
+SUPPORTED_STORAGES: dict = {}
 
 
 def register_storage(schema: str, cls):

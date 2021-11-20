@@ -1,5 +1,5 @@
 from typing import List, Optional
-from urllib.parse import parse_qs, urlparse, unquote
+from urllib.parse import parse_qs, urlparse, unquote, ParseResult
 
 from s3_parse_url.exceptions import InsecureNotAllowed, UnsupportedStorage
 
@@ -10,15 +10,15 @@ INSECURE_SCHEME_SUFFIX = "+insecure"
 
 class S3DataSource:
     allowed_schemas: List[str] = ["s3"]
-    default_endpoint: str = None
-    default_region: str = None
+    default_endpoint: Optional[str] = None
+    default_region: Optional[str] = None
     allow_insecure_scheme: bool = False
     region_param_name: str = "region"
 
     def __init__(self, dsn: str):
         self._dsn = dsn
-        self._raw_bits = None
-        self._parsed_bits = {}
+        self._raw_bits: ParseResult
+        self._parsed_bits: dict = {}
         self._parse()
 
     def __str__(self):
@@ -83,14 +83,14 @@ class S3DataSource:
         else:
             return schema_prefix + host + "/"
 
-    def _parse_region_name(self) -> str:
+    def _parse_region_name(self) -> Optional[str]:
         region = parse_qs(self._raw_bits.query).get(self.region_param_name)
         if region and region[0]:
             return region[0]
         else:
             return self.default_region
 
-    def _parse_bucket_name(self) -> str:
+    def _parse_bucket_name(self) -> Optional[str]:
         if self._is_host_given():
             bucket_name, *key_bits = self._raw_bits.path.lstrip("/").split("/")
             return bucket_name
