@@ -1,5 +1,5 @@
 from typing import List, Optional
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, unquote, urlparse
 
 from s3_parse_url.exceptions import InsecureNotAllowed, UnsupportedStorage
 
@@ -42,7 +42,7 @@ class S3DataSource:
 
     @property
     def secret_access_key(self) -> str:
-        return self._parsed_bits["aws_secret_access_key"]
+        return unquote(self._parsed_bits["aws_secret_access_key"])
 
     @property
     def key(self) -> str:
