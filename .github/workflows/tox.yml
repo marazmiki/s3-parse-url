@@ -34,6 +34,6 @@ jobs:
     - name: Run coveralls
       run: coveralls
       env:
-        COVERALLS_FLAG_NAME: ${{ matrix.test-name }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # COVERALLS_FLAG_NAME: ${{ matrix.test-name }}
+        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
