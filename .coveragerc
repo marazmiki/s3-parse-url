@@ -1,4 +1,5 @@
 [run]
+data_file = ./coverage
 branch = True
 relative_files = true
 omit =
