@@ -35,13 +35,3 @@ jobs:
       run: coveralls
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-
-#      uses: codecov/codecov-action@v2
-#      with:
-#        token: ${{ secrets.COVERALLS_REPO_TOKEN }}
-#        files: .coverage,coverage.xml
-#        # flags: unittests # optional
-#        # name: codecov-umbrella # optional
-#        # fail_ci_if_error: true # optional (default = false)
-#        verbose: true # optional (default = false)
-
