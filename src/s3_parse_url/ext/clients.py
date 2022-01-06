@@ -33,7 +33,10 @@ def get_boto_client_kwargs(url: Parseable, **kwargs):
 def get_aiobotocore_client(url: str, **kwargs):
     if aiobotocore is None:
         raise ValueError("aiobotocore not installed")
-    return aiobotocore.get_session().create_client(
+
+    from aiobotocore.session import get_session
+
+    return get_session().create_client(
         "s3", **get_boto_client_kwargs(url, **kwargs),
     )
 
