@@ -8,7 +8,7 @@ templates_path = ["_templates"]
 source_suffix = ".rst"
 
 master_doc = "index"    # It's important for RTFD
-exclude_patterns = []
+exclude_patterns: list = []
 
 # HTML
 html_theme = "alabaster"    # sphinx

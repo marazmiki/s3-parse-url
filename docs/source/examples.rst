@@ -1,6 +1,19 @@
 Examples
 ========
 
+.. warning::
+
+    Sometimes, Amazon can generate secret access keys containing special chars 
+    like /. If so, you should prepare a safe version of the key by quoting these 
+    chars manually (in the example you should get %25). Feel free to use this 
+    handy snippet to get a safe  (i.e. quoted) secret access key.
+    Example:
+
+    .. code::
+
+        echo "pass\/\/ord" | python -c "import sys; from urllib.parse import quote_plus; print(quote_plus(sys.stdin.read().strip()))"
+        pass%5C%2F%5C%2Ford
+
 .. code::
 
     import typing

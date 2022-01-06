@@ -1,6 +1,6 @@
 .tox
 .pytest_cache
-.coverage
+.coverage*
 dist
 htmlcov
 .idea
@@ -8,3 +8,5 @@ htmlcov
 .python-version
 coverage.xml
 docs/_build
+.vscode
+docs/source/_build/

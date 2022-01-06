@@ -30,6 +30,18 @@ def test_s3_parse_url(dsn, expected_values):
         assert getattr(parse_s3_dsn(dsn), field) == expected_value, field
 
 
+@pytest.mark.parametrize(
+    argnames="dsn, expected_password",
+    argvalues=[
+        ("s3://xxx:yy%2Fy@my-bucket", "yy/y"),
+        ("s3://xxx:yy%23y@my-bucket", "yy#y"),
+        ("s3://xxx:yy%3Ay@my-bucket", "yy:y"),
+    ],
+)
+def test_s3_parse_url_with_not_format_password(dsn, expected_password):
+    assert parse_s3_dsn(dsn).secret_access_key == expected_password
+
+
 def test_s3_parse_url_exception():
     with pytest.raises(UnsupportedStorage):
         parse_s3_dsn("wtf://")
