@@ -29,11 +29,10 @@ jobs:
         pip install tox tox-gh-actions coveralls
 
     - name: Run test in tox
-      run: tox
-
-    - name: Run coveralls
-      run: coveralls
+      run: |
+        tox
+        coveralls
       env:
-        # COVERALLS_FLAG_NAME: ${{ matrix.test-name }}
-        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+         COVERALLS_FLAG_NAME: ${{ matrix.test-name }}
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
