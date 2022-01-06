@@ -6,4 +6,5 @@ htmlcov
 .idea
 *.pyc
 .python-version
+coverage.xml
 docs/_build
