@@ -35,11 +35,9 @@ jobs:
       uses: codecov/codecov-action@v2
       with:
         token: ${{ secrets.COVERALLS_REPO_TOKEN }}
-        files: .coverage
+        # files: .coverage
         # flags: unittests # optional
         # name: codecov-umbrella # optional
         # fail_ci_if_error: true # optional (default = false)
         verbose: true # optional (default = false)
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+
