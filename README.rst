@@ -2,8 +2,6 @@
 s3-parse-url
 ############
 
-------
-
 .. image:: https://img.shields.io/pypi/pyversions/s3-parse-url
   :alt: PyPI - Python Version
 
