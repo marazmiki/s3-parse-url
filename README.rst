@@ -2,8 +2,25 @@
 s3-parse-url
 ############
 
+------
+
+.. image:: https://img.shields.io/pypi/pyversions/s3-parse-url
+  :alt: PyPI - Python Version
+
+.. image:: https://img.shields.io/pypi/v/s3-parse-url
+  :alt: PyPI
+
+.. image:: https://img.shields.io/pypi/l/s3-parse-url
+ :alt: PyPI - License
+
+
 .. image:: https://coveralls.io/repos/github/marazmiki/s3-parse-url/badge.svg?branch=master
  :target: https://coveralls.io/github/marazmiki/s3-parse-url?branch=master
+
+.. image:: https://img.shields.io/codacy/grade/80c1a1af099848ddb5cc86221723f8d5
+  :alt: Codacy grade
+
+-----
 
 Parses S3 credentials from the given string and returns it in comfortable
 format to pass to popular clients like boto3.
