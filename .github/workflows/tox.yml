@@ -16,7 +16,7 @@ jobs:
           - 3.10.0
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
@@ -29,10 +29,11 @@ jobs:
         pip install tox tox-gh-actions coveralls
 
     - name: Run test in tox
-      run: |
-        tox
-        coveralls
+      run: tox
+
+    - name: Run coveralls
+      run: coveralls
       env:
-         COVERALLS_FLAG_NAME: ${{ matrix.test-name }}
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        COVERALLS_FLAG_NAME: ${{ matrix.test-name }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
