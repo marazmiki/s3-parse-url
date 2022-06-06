@@ -4,7 +4,7 @@ from s3_parse_url.base import INSECURE_SCHEME_SUFFIX, S3DataSource
 from s3_parse_url.exceptions import UnsupportedStorage
 from s3_parse_url.storages import SUPPORTED_STORAGES
 
-__version__ = "0.3.0"
+__version__ = "0.3.3"
 __all__ = ["parse_s3_dsn", "parse_s3_url", "UnsupportedStorage"]
 
 

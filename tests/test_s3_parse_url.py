@@ -23,6 +23,28 @@ from s3_parse_url.storages.amazon import AmazonS3
         ("s3://my-bucket/my/key_#1.txt", {"bucket_name": "my-bucket"}),
         ("s3://my-bucket/my/key_#1.txt", {"key": "my/key_#1.txt"}),
         ("minio+insecure://my-bucket", {"endpoint_url": None}),
+        ("s3://xxx:yyy@my-bucket/key.txt?region=us-east-2", {
+            "bucket_name": "my-bucket",
+            "key": "key.txt",
+            "region": "us-east-2",
+            "access_key_id": "xxx",
+            "secret_access_key": "yyy",
+            "endpoint_url": None,
+        }),
+        ("s3://AKIAxxxMOO:XxxPKC%2Byyy@audio?region=us-east-1", {
+            "bucket_name": "audio",
+            "access_key_id": "AKIAxxxMOO",
+            "secret_access_key": "XxxPKC+yyy",
+            "region": "us-east-1",
+        }),
+        (
+            "s3://XXXX:YYYY%2FZZZZ@bucket53?region=us-east-3", {
+                "bucket_name": "bucket53",
+                "region": "us-east-3",
+                "access_key_id": "XXXX",
+                "secret_access_key": "YYYY/ZZZZ"
+            }
+        ),
     ],
 )
 def test_s3_parse_url(dsn, expected_values):

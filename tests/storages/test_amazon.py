@@ -36,3 +36,8 @@ def test_amazon_specified_parse_url(dsn, expected_values):
 def test_just_for_coverage():
     dsn = AmazonS3("s3://bucket-not")
     dsn._strip_amazon_prefix()
+
+
+def test_regression_empty_endpoiont():
+    dsn = "s3://user:pass@/bucket/?region_name=us-east-1"
+    parse_s3_dsn(dsn)

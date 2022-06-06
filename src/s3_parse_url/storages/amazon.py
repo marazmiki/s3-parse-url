@@ -10,10 +10,10 @@ class AmazonS3(S3DataSource):
     )
 
     def _is_amazon_host(self):
-        return all((
-            self._raw_bits.hostname,
+        return (
+            self._raw_bits.hostname is not None and
             self._raw_bits.hostname.lower().endswith(self.amazon_s3_domains)
-        ))
+        )
 
     def _strip_amazon_prefix(self):
         for d in self.amazon_s3_domains:

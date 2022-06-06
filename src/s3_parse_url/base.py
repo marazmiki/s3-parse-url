@@ -70,7 +70,7 @@ class S3DataSource:
         "Checks if in the DSN there is an explicitly given domain name"
         return any((
             self._raw_bits.port is not None,
-            self._raw_bits.hostname.count(".") > 0
+            self._raw_bits.hostname and self._raw_bits.hostname.count(".") > 0
         ))
 
     def _parse_endpoint_url(self):
