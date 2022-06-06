@@ -55,3 +55,17 @@ def test_check_if_compatible(monkeypatch, dsn, allowed_schemas, expect_error):
             AmazonS3(dsn)
     else:
         AmazonS3(dsn)
+
+
+@pytest.mark.parametrize(
+    argnames="dsn, expected_password",
+    argvalues=[
+        ("s3://xxx:yy%2Fy@my-bucket", "yy/y"),
+        ("s3://xxx:yy%23y@my-bucket", "yy#y"),
+        ("s3://xxx:yy%3Ay@my-bucket", "yy:y"),
+    ],
+)
+def test_s3_parse_url_when_secret_key_contains_special_chars(
+        dsn, expected_password
+):
+    assert parse_s3_dsn(dsn).secret_access_key == expected_password
