@@ -10,7 +10,6 @@ jobs:
     strategy:
       matrix:
         python-version:
-          - "3.7"
           - "3.8"
           - "3.9"
           - "3.10"
@@ -30,11 +29,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install tox tox-gh-actions coveralls
 
-
     - name: Running the test with `tox`
       run: tox -- --cov-report=xml
-      env:
-        VIRTUALENV_DISCOVERY: pyenv
 
     - name: Upload to Coveralls
       run: coveralls
