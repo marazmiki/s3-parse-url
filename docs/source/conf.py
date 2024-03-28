@@ -2,7 +2,7 @@ project = "s3-parse-url"
 copyright = "2021, Mikhail Porokhovnichenko <marazmiki@gmail.com>"
 author = 'Mikhail Porokhovnichenko <marazmiki@gmail.com>'
 
-release = "0.3.4"
+release = "0.3.5"
 extensions = ["sphinx.ext.autodoc"]
 templates_path = ["_templates"]
 source_suffix = ".rst"
