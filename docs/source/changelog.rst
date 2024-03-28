@@ -1,8 +1,17 @@
 Changelog
 #########
 
+
 0.3.x
 =====
+
+
+0.3.2
+-----
+
+Released 2024-03-28
+
+* Tested support for python ``3.11`` and ``3.12``
 
 0.3.1
 -----
