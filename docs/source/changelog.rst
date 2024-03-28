@@ -16,6 +16,12 @@ Released 2024-03-28
 0.3.x
 =====
 
+0.3.3
+-----
+
+Released 2024-03-28
+
+A technical release, sorry
 
 0.3.2
 -----
