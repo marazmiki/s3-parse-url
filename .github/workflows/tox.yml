@@ -28,7 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install tox tox-gh-actions coveralls virtualenv-pyenv
+        pip install tox tox-gh-actions coveralls
 
 
     - name: Running the test with `tox`
