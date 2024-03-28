@@ -1,6 +1,17 @@
 Changelog
 #########
 
+0.4.x
+=====
+
+
+0.4.0
+-----
+
+Released 2024-03-28
+
+* Just removed Python 3.7 support
+* Updated development stuff (github action versions, deps, etc)
 
 0.3.x
 =====
